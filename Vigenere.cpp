@@ -22,9 +22,11 @@ char Vigenere::encrypt(char a)
 {
 	char r;
 	if (int(a) >= 65 && int(a) <= 90) // If uppercase
-		r = static_cast<char>(65 + (((int(a) - 65) + (int(toupper(cipher[cI++])) - 65)) % 26));
+		r = static_cast<char>(65 + (((int(a) - 65) + 
+		(int(toupper(cipher[cI++])) - 65)) % 26));
 	else if (int(a) >= 97 && int(a) <= 122) // If lowercase
-		r = static_cast<char>(97 + (((int(a) - 97) + (int(toupper(cipher[cI++])) - 65)) % 26));
+		r = static_cast<char>(97 + (((int(a) - 97) + 
+		(int(toupper(cipher[cI++])) - 65)) % 26));
 	else	// If not a letter, pass it
 		r = a;
 
@@ -43,9 +45,11 @@ string Vigenere::encrypt(string phrase)
 	for (int i = 0; i < phrase.length(); i++)
 	{
 		if (int(phrase[i]) >= 65 && int(phrase[i]) <= 90)	// If uppercase
-			encrytpedPhrase << static_cast<char>(65 + (((int(phrase[i]) - 65) + (int(toupper(cipher[cI++])) - 65)) % 26));
+			encrytpedPhrase << static_cast<char>(65 + 
+			(((int(phrase[i]) - 65) + (int(toupper(cipher[cI++])) - 65)) % 26));
 		else if (int(phrase[i]) >= 97 && int(phrase[i]) <= 122)	// If lowercase
-			encrytpedPhrase << static_cast<char>(97 + (((int(phrase[i]) - 97) + (int(toupper(cipher[cI++])) - 65)) % 26));
+			encrytpedPhrase << static_cast<char>(97 + 
+			(((int(phrase[i]) - 97) + (int(toupper(cipher[cI++])) - 65)) % 26));
 		else	// If not a letter, pass it
 			encrytpedPhrase << phrase[i];
 
@@ -61,9 +65,11 @@ char Vigenere::decrypt(char a)
 {
 	char r;
 	if (int(a) >= 65 && int(a) <= 90) // If uppercase
-		r = static_cast<char>(65 + (((int(a) - 65) - (int(toupper(cipher[cI++])) - 65) + 26) % 26));
+		r = static_cast<char>(65 + (((int(a) - 65) - 
+		(int(toupper(cipher[cI++])) - 65) + 26) % 26));
 	else if (int(a) >= 97 && int(a) <= 122) // If lowercase
-		r = static_cast<char>(97 + (((int(a) - 97) - (int(toupper(cipher[cI++])) - 65) + 26) % 26));
+		r = static_cast<char>(97 + (((int(a) - 97) - 
+		(int(toupper(cipher[cI++])) - 65) + 26) % 26));
 	else	// If not a letter, pass it
 		r = a;
 
@@ -82,9 +88,11 @@ string Vigenere::decrypt(string phrase)
 	for (int i = 0; i < phrase.length(); i++)
 	{
 		if (int(phrase[i]) >= 65 && int(phrase[i]) <= 90)	// If uppercase
-			decrytpedPhrase << static_cast<char>(65 + (((int(phrase[i]) - 65) - (int(toupper(cipher[cI++])) - 65) + 26) % 26));
+			decrytpedPhrase << static_cast<char>(65 + 
+			(((int(phrase[i]) - 65) - (int(toupper(cipher[cI++])) - 65) + 26) % 26));
 		else if (int(phrase[i]) >= 97 && int(phrase[i]) <= 122)	// If lowercase
-			decrytpedPhrase << static_cast<char>(97 + (((int(phrase[i]) - 97) - (int(toupper(cipher[cI++])) - 65) + 26) % 26));
+			decrytpedPhrase << static_cast<char>(97 + 
+			(((int(phrase[i]) - 97) - (int(toupper(cipher[cI++])) - 65) + 26) % 26));
 		else	// If not a letter, pass it
 			decrytpedPhrase << phrase[i];
 
