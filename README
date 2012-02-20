@@ -1,0 +1,5 @@
+A Vigenere implementation for C++
+
+Done for a class on data objects, and stored on github for potential employers to browse.
+
+If for some reason you actually wish to use the class, then it should be fairly self evident on what each function does. Take note that the constructor assigns a cipher and sets cI (cipher index) to 0; this is important if you switch phrases to encrypt/decrypt and should always be set to 0 for a new phrase or else it will get treated as part of the old phrase. In short, just init a new vigenere class when moving to another phrase.
